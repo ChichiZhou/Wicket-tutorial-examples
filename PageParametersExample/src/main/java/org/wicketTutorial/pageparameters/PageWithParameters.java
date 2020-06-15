@@ -41,6 +41,7 @@ public class PageWithParameters extends BootstrapBasePage {
 	protected void onInitialize() {		
 		super.onInitialize();
 		setDefaultModel(new Model());
+
 		add(new StatelessLink<Void>("goBack") {
 
 			@Override

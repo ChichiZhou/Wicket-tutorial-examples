@@ -26,32 +26,63 @@ public class HomePage extends BootstrapBasePage {
 	private static final long serialVersionUID = 1L;
 
     public HomePage() {
-    	add(new Link<Void>("pageWithIndexParam") {
-
+    	Link<Void> newLink = new Link<Void>("pageWithIndexParam") {
 			@Override
 			public void onClick() {
 				PageParameters pageParameters = new PageParameters();
 				pageParameters.add("foo", "foo");
 				pageParameters.add("bar", "bar");
-				
-				setResponsePage(PageWithParameters.class, pageParameters);
-			}
-			
-		});
-    	
-    	add(new Link<Void>("pageWithNamedIndexParam") {
 
+				setResponsePage(PageWithParameters.class, pageParameters);   // 这里设置了跳转
+
+			}
+		};
+
+    	add(newLink);
+
+		Link<Void> newLink2 = new Link<Void>("pageWithNamedIndexParam") {
+			/**
+			 * 下面是点击了之后的操作
+			 */
 			@Override
 			public void onClick() {
 				PageParameters pageParameters = new PageParameters();
 				pageParameters.set(0, "foo");
 				pageParameters.set(1, "bar");
 				pageParameters.add("baz", "baz");
-				
+
 				setResponsePage(PageWithParameters.class, pageParameters);
 			}
-			
-		});
+		};
+
+		add(newLink2);
+
+//    	add(new Link<Void>("pageWithIndexParam") {
+//
+//			@Override
+//			public void onClick() {
+//				PageParameters pageParameters = new PageParameters();
+//				pageParameters.add("foo", "foo");
+//				pageParameters.add("bar", "bar");
+//
+//				setResponsePage(PageWithParameters.class, pageParameters);   // 这里设置了跳转
+//			}
+//
+//		});
+    	
+//    	add(new Link<Void>("pageWithNamedIndexParam") {
+//
+//			@Override
+//			public void onClick() {
+//				PageParameters pageParameters = new PageParameters();
+//				pageParameters.set(0, "foo");
+//				pageParameters.set(1, "bar");
+//				pageParameters.add("baz", "baz");
+//
+//				setResponsePage(PageWithParameters.class, pageParameters);
+//			}
+//
+//		});
     }
       
 }

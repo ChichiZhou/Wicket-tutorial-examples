@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="BasicAuthenticationExample:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>BasicAuthenticationExample</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="BasicAuthenticationExample-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="BasicAuthenticationExample:war exploded" />
+    </root>
+  </artifact>
+</component>
